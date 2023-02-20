@@ -15,7 +15,6 @@ public class Array {
 
             items = newItems;
         }
-        // add new item at the end of the array
         items[count++] = item;
     }
     public void print() {
