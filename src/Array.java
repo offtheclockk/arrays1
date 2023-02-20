@@ -6,7 +6,15 @@ public class Array {
     }
 
     public void insert(int item) {
-        // if array is full, resize it
+        if (items.length == count) {
+            int[] newItems = new int[count + 2];
+
+            for (int i = 0; i < count; i++) {
+                newItems[i] = items[i];
+            }
+
+            items = newItems;
+        }
         // add new item at the end of the array
         items[count++] = item;
     }
