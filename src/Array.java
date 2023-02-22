@@ -5,6 +5,12 @@ public class Array {
         items = new int[length];
     }
 
+    public int indexOf(int item) {
+        for (int i = 0; i < count; i++)
+            if (items[i] == item)
+                return i;
+        return -1;
+    }
     public void insert(int item) {
         if (items.length == count) {
             int[] newItems = new int[count + 2];
