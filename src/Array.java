@@ -1,6 +1,8 @@
 public class Array {
     private int[] items;
     private int count;
+
+    private int max;
     public Array(int length) {
         items = new int[length];
     }
@@ -24,6 +26,13 @@ public class Array {
         items[count++] = item;
     }
 
+    public int max() {
+        for (int i = 0; i < count; i++)
+            if (max < items[i])
+                max = items[i];
+        return max;
+    }
+
     public void print() {
         for (int i = 0; i < count; i++)
             System.out.println(items[i]);
@@ -39,4 +48,11 @@ public class Array {
         count--;
     }
 
+    public void reverse() {
+        for (int i = 0, j = count - 1; i < j; i++, j--) {
+            int temp = items[i];
+            items[i] = items[j];
+            items[j] = temp;
+        }
+    }
 }
